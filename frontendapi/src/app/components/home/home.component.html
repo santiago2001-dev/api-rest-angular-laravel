@@ -1,1 +1,17 @@
-<p>home works!</p>
+
+  
+  <div class="product-container">
+
+   
+    <div *ngFor="let per of personaje" class="product-card">
+      <img src="{{per.image}}" alt="per Name" class="per-image">
+      <h3 class="per-name"> <strong>{{per.name}}</strong></h3>
+      <p class="per-price"> <strong>Species : </strong>{{per.species}}</p>
+      <p class="per-price"><strong>status : </strong>{{per.status}}</p>
+      <p class="per-price"> <strong>Grender :</strong>{{per.gender}} </p>
+      <br>
+  
+    </div>
+  </div>    
+ 
+     

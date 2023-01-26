@@ -1,0 +1,178 @@
+.product-container{
+    display:flex;
+    flex-wrap:wrap;
+     width:100%;
+    justify-content:center
+  } 
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+      background-color: white; 
+    
+    padding-bottom:1%
+  
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .product-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .product-description {
+    font-size: 0.875rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .product-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color:black;
+  }
+  
+  .add-to-cart-button {
+    padding: 10px 20px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: darkorange;
+  }
+  
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   }
+  .original-price {
+    text-decoration: line-through;
+    color: lightgray;
+    font-size: 0.875rem;
+  }
+  
+  .discount-price {
+    color: orange;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+
+
+  .menu {
+    position: relative;
+    background: #0275d8;
+    font-family: 'Roboto', sans-serif;
+    width: 3em;
+    height: 3em;
+    border-radius: 5em;
+    margin: auto;
+    
+    cursor: pointer;
+    border: 1em solid #5795D8;
+  }
+  .menu:after {
+    content: "+";
+    position: absolute;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-size: 38px;
+    margin: -14px 0 0 12px; 
+  }
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  .menu li {
+    width: 5em;
+    height: 1.4em;
+    padding: 0.2em;
+    margin-top: 0.2em;
+    text-align: center;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    transition: all 1s;
+    background: black;
+    opacity: 0;
+    z-index: -1;
+    font-weight: normal;
+  }
+  .menu:hover li {
+    opacity: 1;
+  }
+  .menu:hover ul::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    left: 50%;
+    top: -5.0em;
+    border-width: 6.5em;
+    border-radius: 0 7.5em 7.5em 0;
+    border-left: 0;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.01);
+    z-index: -1;
+    cursor: default;
+  }
+  .menu span {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5em;
+  }
+  .menu ul {
+    transform: rotate(180deg) translateY(-2em);
+    transition: 1s all;
+  }
+  .menu:hover ul {
+    transform: rotate(0deg) translateY(-1em);
+  }
+  .menu li:hover {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 1s;
+  }
+  .menu li:nth-of-type(1) {
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -1.2em;
+    top: -4.2em;
+  }
+  .menu li:nth-of-type(2) {
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 2em;
+    top: -3em;
+  }
+  .menu li:nth-of-type(3) {
+    position: absolute;
+    left: 3.4em;
+    top: 0.3em;
+  }
+  .menu li:nth-of-type(4) {
+    transform: rotate(45deg);
+    position: absolute;
+    left: 2em;
+    top: 3.7em;
+  }
