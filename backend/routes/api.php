@@ -23,6 +23,7 @@ Route::delete('product/{id}',[productController::class,'destroy']);
 Route::post('login', [AuthController::class, 'login'],['middleware' => ['cors']]);
 Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
-Route::post('me', [AuthController::class, 'me']);
+Route::post('me', [AuthController::class, 'me'],['middleware' => ['cors']]);
+
 Route::post('/register', [AuthController::class, 'register']);
 

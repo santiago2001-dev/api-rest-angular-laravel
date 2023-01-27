@@ -20,7 +20,11 @@ export class AddUserComponent implements OnInit {
     this.registroFomr = this.fb.group({
       name : ['',Validators.required],
       email:['',[Validators.email,Validators.required]],
-      password:['',Validators.required]
+      password:['',Validators.required],
+      city:['',Validators.required],
+      address:['',Validators.required],
+      birthdate:['',Validators.required]
+
     })
   }
 
@@ -38,7 +42,10 @@ export class AddUserComponent implements OnInit {
         const user :user ={
           name : this.registroFomr.get('name')?.value,
           email : this.registroFomr.get('email')?.value,
-          password :  this.registroFomr.get('password')?.value
+          password :  this.registroFomr.get('password')?.value,
+          city: this.registroFomr.get('city')?.value,
+          address : this.registroFomr.get('address')?.value,
+          birthdate : this.registroFomr.get('birthdate')?.value
         }
         
         this.servicio.register(user).subscribe(
@@ -46,7 +53,7 @@ export class AddUserComponent implements OnInit {
             swal.fire({
               position: 'center',
               icon: 'success',
-              title: 'Producto agregado correctamente',
+              title: 'registro agregado correctamente',
               showConfirmButton: false,
               timer: 1500
             })
@@ -76,4 +83,16 @@ export class AddUserComponent implements OnInit {
     get name(){
       return this.registroFomr.get('name')
     }
+
+    get city(){
+      return this.registroFomr.get('city')
+    }
+
+    get address(){
+      return this.registroFomr.get('address')
+    }
+    get birthdate(){
+      return this.registroFomr.get('birthdate')
+    }
+    
 }

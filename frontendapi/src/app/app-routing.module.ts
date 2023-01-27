@@ -8,7 +8,7 @@ import { LoginGuard } from './guards/login.guard';
 const routes: Routes = [
 { path: '', redirectTo: '/home', pathMatch: 'full' },
  {path:'login',component:LoginComponent},
-  {path:'registro',component:AddUserComponent,canActivate:[LoginGuard]},
+  {path:'registro',component:AddUserComponent},
   {path:'home',component:HomeComponent,canActivate:[LoginGuard]}
 
 ];

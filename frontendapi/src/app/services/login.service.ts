@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,8 @@ login(credenciales : credenciales):Observable<any>{
 }
 isLoggin():boolean{
   this.token = localStorage.getItem('token');
+
+
   if(this.jwHelper.isTokenExpired(this.token) || !localStorage.getItem('token')){
     return false
 

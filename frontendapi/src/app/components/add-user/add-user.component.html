@@ -15,6 +15,11 @@
               </div>
            
          </div>
+
+        </div>
+
+
+
         <div class="container mb-3">
 
           <input type="email" formControlName="email" placeholder="alguien@example.com ">
@@ -44,12 +49,52 @@
        
      </div>
     </div>
+
+    <div class="container mb-3">
+
+        <input formControlName="city" type="text" placeholder="city" required />
+        <div *ngIf="city?.dirty &&(city?.dirty || city?.touched)">
+          <div class="container mb-3">
+          <div id="MensajeTiendaNew" *ngIf="registroFomr.get('city')?.hasError('city')">
+        <p>la conntraseña es un campo <strong>obligatorio</strong></p>
+        </div>
+          </div>
+       
+     </div>
+
+    </div>
+    <div class="container mb-3">
+
+        <input formControlName="address" type="text" placeholder="address" required />
+        <div *ngIf="address?.dirty &&(address?.dirty || address?.touched)">
+          <div class="container mb-3">
+          <div id="MensajeTiendaNew" *ngIf="registroFomr.get('address')?.hasError('address')">
+        <p>la conntraseña es un campo <strong>obligatorio</strong></p>
+        </div>
+          </div>
+       
+     </div>
+
+    </div>
+    <div class="container mb-3">
+
+        <input formControlName="birthdate" type="date" placeholder="birthdate" required />
+        <div *ngIf="birthdate?.dirty &&(birthdate?.dirty || birthdate?.touched)">
+          <div class="container mb-3">
+          <div id="MensajeTiendaNew" *ngIf="registroFomr.get('birthdate')?.hasError('birthdate')">
+        <p>la conntraseña es un campo <strong>obligatorio</strong></p>
+        </div>
+          </div>
+       
+     </div>
+
+    </div>
        
         <button>Entrar</button> 
         
        
       
       <br>
-    </div>
+    
 </form>  
   </div>
