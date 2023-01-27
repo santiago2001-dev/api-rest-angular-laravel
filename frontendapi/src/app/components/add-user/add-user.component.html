@@ -1,18 +1,30 @@
+
 <div class="login">
     <div class="form">
-      <form [formGroup]="loginForm"  (submit)="autentication()" class="login-form">
-        <h1 class="material-icons">Bienvenido </h1>
+      <form [formGroup]="registroFomr"  (submit)="registro()" class="login-form">
+        <h1 class="material-icons">Registrate</h1>
         
+        <div class="container mb-3">
+
+            <input formControlName="name" type="text" placeholder="name" required />
+            <div *ngIf="name?.dirty &&(name?.dirty || name?.touched)">
+              <div class="container mb-3">
+              <div id="MensajeTiendaNew" *ngIf="registroFomr.get('name')?.hasError('name')">
+            <p>la conntraseña es un campo <strong>obligatorio</strong></p>
+            </div>
+              </div>
+           
+         </div>
         <div class="container mb-3">
 
           <input type="email" formControlName="email" placeholder="alguien@example.com ">
           <div *ngIf="email?.dirty &&(email?.dirty || email?.touched)">
-          <div id="MensajeTiendaNew"*ngIf="loginForm.get('email')?.hasError('required')">
+          <div id="MensajeTiendaNew"*ngIf="registroFomr.get('email')?.hasError('required')">
           <p>el correo es <strong>obligatorio</strong></p>
           </div>
           <div class="container mb-3">
           <div id="MensajeTiendaNew"
-          *ngIf="loginForm.get('email')?.hasError('email')">
+          *ngIf="registroFomr.get('email')?.hasError('email')">
           <p>debe propocionar un correo <strong>válido</strong></p>
           </div>
        </div>
@@ -25,7 +37,7 @@
         <input formControlName="password" type="password" placeholder="Contraseña" required />
         <div *ngIf="password?.dirty &&(password?.dirty || password?.touched)">
           <div class="container mb-3">
-          <div id="MensajeTiendaNew" *ngIf="loginForm.get('password')?.hasError('password')">
+          <div id="MensajeTiendaNew" *ngIf="registroFomr.get('password')?.hasError('password')">
         <p>la conntraseña es un campo <strong>obligatorio</strong></p>
         </div>
           </div>
@@ -36,8 +48,8 @@
         <button>Entrar</button> 
         
        
-      </form>  
+      
       <br>
-      <button>Registrarse</button> 
     </div>
+</form>  
   </div>

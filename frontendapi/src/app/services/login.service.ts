@@ -31,8 +31,19 @@ isLoggin():boolean{
   }
   return true
 
-}
+} 
+register(user: user):Observable<any>{
+  let url = `${this.api}/register`
+  return this.http.post(url,user)
 
+
+}
+me(token:any):Observable<any>{
+
+  let url = `${this.api}/me`
+  return this.http.post(url,token)
+
+}
 
 }
 
